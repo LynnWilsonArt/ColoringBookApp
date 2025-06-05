@@ -10,12 +10,17 @@ config_version=5
 
 [application]
 
-config/name="C3A"
+config/name="ColoringBook"
 run/main_scene="uid://b1eag8872wcue"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[display]
+
+window/stretch/mode="canvas_items"
 
 [rendering]
 
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+textures/vram_compression/import_etc2_astc=true
