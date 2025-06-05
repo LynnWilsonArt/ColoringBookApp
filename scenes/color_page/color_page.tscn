@@ -1,8 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://c374uug4fnivn"]
+[gd_scene load_steps=3 format=3 uid="uid://c374uug4fnivn"]
 
+[ext_resource type="Script" uid="uid://cxi847i822xlj" path="res://scenes/color_page/color_page.gd" id="1_wd48i"]
 [ext_resource type="Texture2D" uid="uid://bwxdl0pnpm1t2" path="res://pages/2.jpeg" id="1_ytuyq"]
 
 [node name="PageToColor" type="CanvasLayer"]
+script = ExtResource("1_wd48i")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 anchors_preset = 15
@@ -15,3 +17,16 @@ grow_vertical = 2
 position = Vector2(608, 328)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_ytuyq")
+
+[node name="Button" type="Button" parent="."]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -64.0
+offset_right = 229.0
+offset_bottom = -1.0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 40
+text = "Next Image"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
