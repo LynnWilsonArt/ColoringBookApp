@@ -1,0 +1,73 @@
+[gd_scene load_steps=4 format=3 uid="uid://b1eag8872wcue"]
+
+[ext_resource type="Texture2D" uid="uid://c3ifxpqpuwrlc" path="res://Logo/C3ALogo.jpeg" id="1_iuonh"]
+[ext_resource type="Script" uid="uid://dxr5c0kadtcd3" path="res://scenes/main/main.gd" id="1_k2fmo"]
+[ext_resource type="Texture2D" uid="uid://wi7fu73cn6sm" path="res://Logo/LynnWilsonArt.jpg" id="2_k2fmo"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_k2fmo")
+
+[node name="MainGUI" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="MainGUI"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="MainGUI/ColorRect"]
+position = Vector2(301, 246)
+scale = Vector2(0.8375, 0.684722)
+texture = ExtResource("1_iuonh")
+
+[node name="Sprite2D" type="Sprite2D" parent="MainGUI/ColorRect/Sprite2D"]
+
+[node name="LynnWilsonArt" type="Sprite2D" parent="MainGUI/ColorRect/Sprite2D"]
+position = Vector2(721.194, 303.773)
+scale = Vector2(0.745509, 0.852404)
+texture = ExtResource("2_k2fmo")
+
+[node name="C3A" type="RichTextLabel" parent="MainGUI/ColorRect"]
+layout_mode = 0
+offset_left = 69.0
+offset_top = 403.0
+offset_right = 580.0
+offset_bottom = 467.0
+theme_override_font_sizes/normal_font_size = 35
+text = "Central Alabama Arts Alliance"
+
+[node name="LWA" type="RichTextLabel" parent="MainGUI/ColorRect"]
+layout_mode = 0
+offset_left = 765.0
+offset_top = 179.0
+offset_right = 1052.0
+offset_bottom = 243.0
+theme_override_font_sizes/normal_font_size = 35
+text = "Lynn Wilson Art"
+
+[node name="ButtonStart" type="Button" parent="MainGUI/ColorRect"]
+layout_mode = 0
+offset_left = 725.0
+offset_top = 62.0
+offset_right = 1079.0
+offset_bottom = 139.0
+theme_override_colors/font_color = Color(0.54902, 0.929412, 0.0823529, 1)
+theme_override_font_sizes/font_size = 50
+text = "Start Coloring!
+"
+
+[node name="ColoringBookFun" type="Label" parent="MainGUI/ColorRect"]
+layout_mode = 0
+offset_left = 83.0
+offset_top = 476.0
+offset_right = 552.0
+offset_bottom = 545.0
+theme_override_colors/font_color = Color(0.54902, 0.929412, 0.0823529, 1)
+theme_override_font_sizes/font_size = 50
+text = "Coloring Book Fun!"
+
+[node name="PageToColor" type="CanvasLayer" parent="."]
+
+[connection signal="pressed" from="MainGUI/ColorRect/ButtonStart" to="." method="_on_button_start_pressed"]
