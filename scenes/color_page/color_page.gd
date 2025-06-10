@@ -18,7 +18,7 @@ var count = 0
 var brush_size = 8
 var brush_color := Color(1, 0, 0)  # Red
 func _ready() -> void:
-	# LOad the first page
+	# Load the first page
 	$ColorRect/PageSprite2D.texture = load(image_path[count])
 	
 
